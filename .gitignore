@@ -1,0 +1,7 @@
+# local working files — not part of the deployed site
+.DS_Store
+.claude/
+Claude Designed Site/
+Inspo/
+WEBM/
+*.zip
