@@ -91,6 +91,7 @@ body::after {
   font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--muted);
+  flex-shrink: 0; /* a squeezed label wrapping inside the 1.25em mask breaks the ticker */
 }
 
 .role-arrow { color: var(--accent); }
@@ -104,7 +105,7 @@ body::after {
 
 .role-reel { display: block; transition: transform .55s cubic-bezier(.7, 0, .2, 1); }
 
-.role-item { display: block; height: 1.25em; }
+.role-item { display: block; height: 1.25em; white-space: nowrap; }
 
 .nav-right {
   display: flex;
@@ -653,6 +654,11 @@ body::after {
     gap: 6px;
   }
   .swatch { width: 18px; height: 18px; }
+  .role-ticker { font-size: 10px; gap: 8px; }
+}
+
+@media (max-width: 479px) {
+  .role-ticker { display: none; }
 }
 
 /* ---------- reduced motion ---------- */
