@@ -82,6 +82,7 @@ body::after {
   border-radius: 50%;
   background: var(--accent);
   display: inline-block;
+  flex-shrink: 0; /* flex compression squashes the circle on narrow screens */
 }
 
 .role-ticker {
@@ -383,7 +384,7 @@ body::after {
   gap: 8px;
 }
 
-.card-role-label { color: var(--accent); }
+.card-role-label { color: var(--accent); flex-shrink: 0; }
 
 .card-side {
   display: flex;
@@ -655,6 +656,8 @@ body::after {
   }
   .swatch { width: 18px; height: 18px; }
   .role-ticker { font-size: 10px; gap: 8px; }
+  .card-meta { flex-direction: column; gap: 10px; }
+  .card-side { flex-direction: row; align-items: baseline; gap: 12px; }
 }
 
 @media (max-width: 479px) {
