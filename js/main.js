@@ -16,7 +16,7 @@
     cursorBlob: true,
     blobSize: 120,
     pixelGrid: true,
-    gridSize: 26,
+    gridSize: 10,
     gridDecay: 2.2,
     gridOpacity: 1,
     monochrome: true
@@ -41,8 +41,11 @@
   ];
   var N = data.length;
 
+  /* direct Vimeo CDN posters (1280px) — vumbnail.com is only a fallback */
+  var posters = { '45977086': '369723620-7e450ff9e805d843b58eb62f53331aa9a75c0c67b8b432429052f437cccf258c', '54195520': '374632987-92b115a3dbf721ffe3281a55addd00ddc4199ba3a77cc2d983e82f6a9871d589', '68255749': '440578404-2894b93bb5530dfb7b4311a8f7b9683c10fd881f11b0c6ae5ecd0d9e0dcbcdb7', '73189758': '447225455-f64236772d01a644ddcd89f94deb6988200eee5cac7ce1a951268d6b15ebcd92', '96955797': '477247816-5cf91b6438282e2572e861b23f95f7162be4bc59bd5704a73cec275da8d983fd', '147652395': '546380954-1fddf50d2d9789b7f88c4cd937037b8334f5f29917c3534960ef6626cf2b5f00', '255592407': '683038800-f78f49b0145ab31cbab318db6f051750e8d6e665e12578ab17af8f7678f104fd', '255592631': '683039049-776d1d9d59583ebcc6160a944aceaeb474f43440385e6eab2666631bfeeff6b7', '255594706': '683041847-57d51e25b74ac2300e79b3c751c766ed8cafae7fca600182b313c213d2b21851', '526228048': '1089276947-7d7f10ee00528124fff0fb54bcd776137d8e9b4dce49efb98635e1a0757a558a', '549152322': '1136948711-3c654807a997be6435a23e30b3c4060159e49e48606fd7dee98d91d921f32b8b', '578600776': '1196882806-badeafbd6ef3e531232e42f0379c7b4a3822998dfc038963c7e2de059d1ab5c8', '1017734278': '1935792379-5292e689df80e6a789af17f1e13200123b4025296a20ad21d35b19c8cd12898f', '1018017656': '1936129402-6544ab43737be3ba1978094e75a27e6a272acd4c1b4e0e67420b71fe88511dc9', '1018019368': '1936131408-4374a381bdaeeaab4f69e3362216bdd7064de0c785e06fdd811d498619cfa54f', '1018020286': '1936132466-b832339b71d6baf489f7b7fcc8b1913fecc9753b5b92e3fd3adbb1ebe044d93d', '1018021255': '1936146725-08cdf45d3249f5b2ad9230e69ddd4385020868420e44e9de9c7552d6e92b4b42', '1018023238': '1936136105-ff00390693ad6493b4205a28f46f2098e0b3460de80a217d9175829123e3763e', '1018026567': '1936140183-a76f5835a932f4c2619821f0c1e0898978832d8b78b323ac68fabe93008ccc40', '1026714591': '1946548128-644e17f59709fb3c124d71af1daf1a0f418506c06e00c905ac74927e76bf4de9', '1026714999': '1946549894-9d8d3974425b7fd62c5f04bfd77332489894d6e200eb5c149077363188d2489d', '1026972287': '1946854338-751eca4d095458ae2d860d4ac1e563dc84a6a5fb398ef1ed91edf7db7903d8ca', '1026975155': '1946857578-76f6fc0a954ccc228d0abab7f9fed3a08bb645cffe5f54a5e7e0ed5cee35999b', '1026975603': '1946858038-6948d8b0c5e8d8f521530fe474fb6beb80f0327c193a5838b2032ec4e1a25f7b', '1154777635': '2107215553-ff83128111d49be28b40602c232461d7d7c06c3dfa69da0930fe188f0a882791', '1206224578': '2175013905-9eada3d6e81e06789be571e3041333e09a938765f1380c88070c1e1fe2a2b7d6', '1206225395': '2175430270-1779d19a1a8bdd2310f8f7534d9d981218b0e1653f76d2706e2f440ce3bdfc4b', '1206553563': '2175429415-be88654c0ede2d5bca95e891441780bd3c9b011794d1234e709ff50e6688e079' };
+
   var vimeoUrl = function (p) { return 'https://vimeo.com/' + p.id + (p.hash ? '/' + p.hash : ''); };
-  var posterOf = function (p) { return p.poster || ('https://vumbnail.com/' + p.id + '.jpg'); };
+  var posterOf = function (p) { return p.poster || (posters[p.id] ? 'https://i.vimeocdn.com/video/' + posters[p.id] + '-d_1280?region=us' : 'https://vumbnail.com/' + p.id + '.jpg'); };
   var embedOf = function (p) { return 'https://player.vimeo.com/video/' + p.id + '?' + (p.hash ? 'h=' + p.hash + '&' : '') + 'background=1&autoplay=1&muted=1&loop=1&autopause=0&dnt=1'; };
 
   /* ---------------- state & fixed elements ---------------- */
@@ -213,7 +216,7 @@
       a.href = 'https://vimeo.com/' + c.id; a.target = '_blank'; a.rel = 'noreferrer';
       a.style.animationDelay = (0.1 + i * 0.05).toFixed(2) + 's';
       var img = document.createElement('img');
-      img.src = 'https://vumbnail.com/' + c.id + '.jpg'; img.alt = c.title;
+      img.src = posterOf(c); img.alt = c.title;
       var cap = document.createElement('div');
       cap.className = 'mosaic-cap';
       var st = document.createElement('span'); st.className = 'cap-title'; st.textContent = c.title;
@@ -692,9 +695,10 @@
       used[s2] = 1;
       var loop = [segs[s2][0], segs[s2][1]], cur = segs[s2][1], guard = 0;
       while (guard++ < 5000) {
-        var nbArr = map.get(key(cur)) || [], nb;
+        var nbArr = map.get(key(cur)) || [];
+        var nb = -1; // reset every iteration — `var` persists across the while loop
         for (var q2 = 0; q2 < nbArr.length; q2++) if (!used[nbArr[q2]]) { nb = nbArr[q2]; break; }
-        if (nb === undefined) break;
+        if (nb === -1) break;
         used[nb] = 1;
         var sg2 = segs[nb];
         cur = key(sg2[0]) === key(cur) ? sg2[1] : sg2[0];
