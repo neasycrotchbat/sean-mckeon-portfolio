@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sean McKeon — Resume</title>
+  <meta name="description" content="Resume of Sean McKeon, senior motion graphics designer in Richardson, TX.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23111111'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #d9d9d9;
+      font-family: 'Outfit', sans-serif;
+      color: #231f20;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #231f20; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    p { margin: 0; }
+
+    .sheet-stage { display: flex; justify-content: center; padding: 28px 12px; }
+
+    /* US Letter: 612pt × 792pt */
+    .page {
+      width: 612pt;
+      min-height: 792pt;
+      flex-shrink: 0;
+      background: #f3f3f3;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .28);
+      transform-origin: top center;
+      padding: 14pt 18pt 10pt 18pt;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 148pt 1fr;
+      column-gap: 0;
+      align-content: start;
+      font-size: 9pt;
+      line-height: 1.25;
+    }
+
+    .contact-row {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: 148pt 158pt;
+      font-weight: 300;
+      font-size: 9pt;
+      line-height: 11pt;
+      padding-top: 2pt;
+    }
+    .contact-col { display: flex; flex-direction: column; }
+
+    .name-block {
+      grid-column: 1 / -1;
+      padding: 14pt 0 10pt 0;
+      font-weight: 300;
+      font-size: 30pt;
+      line-height: 34pt;
+      letter-spacing: -0.01em;
+    }
+
+    .rule { grid-column: 1 / -1; border-top: 0.5pt solid #231f20; margin: 8pt 0 6pt 0; }
+    .rule--first { margin: 0 0 6pt 0; }
+
+    .section-title { font-weight: 300; font-size: 15pt; line-height: 18pt; }
+
+    .about {
+      font-weight: 400;
+      font-size: 9.5pt;
+      line-height: 12pt;
+      text-wrap: pretty;
+      max-width: 420pt;
+    }
+
+    .jobs { display: flex; flex-direction: column; gap: 5pt; }
+
+    .job-head {
+      display: grid;
+      grid-template-columns: 148pt 165pt 1fr;
+      font-weight: 500;
+      font-size: 10pt;
+      line-height: 13pt;
+      white-space: nowrap;
+      margin-bottom: 1pt;
+    }
+
+    .job-points {
+      display: flex;
+      flex-direction: column;
+      font-weight: 400;
+      font-size: 9pt;
+      line-height: 10.3pt;
+      text-wrap: pretty;
+    }
+
+    .edu-head {
+      display: grid;
+      grid-template-columns: 148pt 165pt 1fr;
+      font-weight: 500;
+      font-size: 10pt;
+      line-height: 13pt;
+      white-space: nowrap;
+    }
+    .edu-detail {
+      display: grid;
+      grid-template-columns: 148pt 158pt 1fr;
+      font-weight: 400;
+      font-size: 9.5pt;
+      line-height: 12pt;
+    }
+
+    .caps { display: grid; grid-template-columns: 170pt 1fr; font-size: 9.5pt; line-height: 10.5pt; }
+    .caps-label { font-weight: 400; }
+    .caps-list { display: flex; flex-direction: column; font-weight: 500; font-size: 9.5pt; }
+    .caps-list--skills { white-space: nowrap; }
+
+    @media print {
+      body { background: none; }
+      .sheet-stage { padding: 0; }
+      .page { box-shadow: none; transform: none !important; }
+    }
+    @page { size: letter; margin: 0; }
+  </style>
+</head>
+<body>
+
+<div class="sheet-stage">
+<section class="page">
+
+  <!-- header row: contact + links -->
+  <div class="contact-row">
+    <div class="contact-col">
+      <span>816.808.2171</span>
+      <span>seanrobertmckeon@gmail.com</span>
+    </div>
+    <div class="contact-col">
+      <a href="https://vimeo.com/1154777635">Reel</a>
+      <a href="https://seanrobertmckeon.com/">Website</a>
+      <a href="https://www.linkedin.com/in/sean-mckeon-77018557/">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- name + title -->
+  <div class="name-block">
+    <div>Sean McKeon</div>
+    <div>Motion Graphics Designer</div>
+  </div>
+
+  <!-- About -->
+  <div class="rule rule--first"></div>
+  <div class="section-title">About me</div>
+  <p class="about">I'm a senior motion graphics designer based in Richardson, Texas. For 15+ years I've designed and animated for broadcast, brands, sports, and live experiences, leading 2D/3D work on national campaigns and events.</p>
+
+  <!-- Experience -->
+  <div class="rule"></div>
+  <div class="section-title">Experience</div>
+  <div class="jobs">
+
+    <div>
+      <div class="job-head"><span>NBCUniversal</span><span>Senior Designer</span><span>June 2025 – Present</span></div>
+      <ul class="job-points">
+        <li>• Design and animate campaign creative for Peacock, Telemundo, and NBC local news affiliates, partnering with cross-functional producers, marketers, and editors from concept through delivery.</li>
+        <li>• Design news assets and live network event animations for NBC and Telemundo markets.</li>
+        <li>• Build and maintain motion templates and style-guide systems that keep concurrent multi-brand campaigns on-spec and cut turnaround time on recurring deliverables.</li>
+        <li>• Mentor junior designers with structured feedback and reviews, raising consistency and craft across a 30+ person design team.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-head"><span>INTER NYC / GameStop</span><span>Freelance Motion Designer</span><span>Oct 2024 – Apr 2025</span></div>
+      <ul class="job-points">
+        <li>• Concepted the end-to-end interactive experience loop and visual identity for the GameStop × PSA "Push Start Arcade" activation, defining how visitors move through and engage with the experience.</li>
+        <li>• Modeled, textured, and animated alien-humanoid characters and 3D environments for interactive art exhibits.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-head"><span>Intake Studios</span><span>Senior Motion Designer</span><span>Apr 2016 – Oct 2024</span></div>
+      <ul class="job-points">
+        <li>• Designed and animated cinematic 3D scenes for 4 national AMC Theatres pre-shows, screened across ~860 theatres and 9,600 screens worldwide and viewed by millions of moviegoers every month.</li>
+        <li>• Animated promotional spots for AMC's in-theatre screens and social channels, and produced 3D key art for print media and posters.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-head"><span>Garmin</span><span>Senior Motion Designer</span><span>Sep 2021 – May 2022</span></div>
+      <ul class="job-points">
+        <li>• Developed 3D product launch videos for smartwatch, dash cam, and pet-tracking lines, translating engineering specs into consumer-facing feature stories.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-head"><span>S Group Creations</span><span>Senior Motion Designer</span><span>Jul 2014 – Apr 2016</span></div>
+      <ul class="job-points">
+        <li>• Crafted in-stadium player intros, LED ribbon-board graphics, and hype videos for the Kansas City Royals, Seattle Mariners, Dallas Cowboys, and Calgary Flames, displayed live to crowds of 40,000+ per game.</li>
+        <li>• Produced CAD-based product renderings for Scholle packaging.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-head"><span>T2 / Hint</span><span>Motion Designer &amp; Programmer</span><span>Jan 2011 – Jul 2014</span></div>
+      <ul class="job-points">
+        <li>• 3D lead on an 8-person design team delivering commercial and large-event graphics for PUMA, National Geographic, Wendy's, PetSmart, Sprint, and LinkedIn.</li>
+        <li>• Programmed real-time particle systems for large-scale projection installations, bridging design and code on interactive event experiences.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-head"><span>JW Broadcasting</span><span>Creative Services Producer</span><span>Jun 2008 – Dec 2010</span></div>
+      <ul class="job-points">
+        <li>• Wrote, shot, and edited commercials for Columbia, Missouri's ABC and FOX affiliate stations.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="rule"></div>
+  <div class="section-title">Education</div>
+  <div>
+    <div class="edu-head"><span>University of Missouri</span><span>Field of study</span><span>2003 – 2008</span></div>
+    <div class="edu-detail"><span>Bachelor of Science</span><span>Information Technology</span><span></span></div>
+  </div>
+
+  <!-- Capabilities -->
+  <div class="rule"></div>
+  <div class="section-title">Capabilities</div>
+  <div class="caps">
+    <div>
+      <div class="caps-label">Skills:</div>
+      <ul class="caps-list caps-list--skills">
+        <li>2D &amp; 3D Animation</li><li>Modeling &amp; Texturing</li><li>Visual Effects</li><li>Character Animation</li><li>Real-Time &amp; Interactive Graphics</li><li>Brand Systems &amp; Style Guides</li><li>Programming</li><li>AI-Assisted Workflows</li>
+      </ul>
+    </div>
+    <div>
+      <div class="caps-label">Tools:</div>
+      <ul class="caps-list">
+        <li>Maxon Cinema 4D</li><li>Redshift &amp; Octane Renderers</li><li>Adobe CC Suite</li><li>Figma</li><li>Cavalry</li><li>Claude</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<script>
+  // scale the letter sheet down to fit narrow viewports (never up)
+  (function () {
+    var page = document.querySelector('.page');
+    var stage = document.querySelector('.sheet-stage');
+    function fit() {
+      var avail = window.innerWidth - 24;
+      var w = page.offsetWidth;
+      var s = Math.min(1, avail / w);
+      page.style.transform = s < 1 ? 'scale(' + s + ')' : '';
+      stage.style.height = s < 1 ? (page.offsetHeight * s + 56) + 'px' : '';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+  })();
+</script>
+
+</body>
+</html>
