@@ -245,7 +245,7 @@ a:hover { color: inherit; }
 .proj-title {
   margin: 0;
   font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(40px, 5.2vw, 96px);
+  font-size: clamp(10px, 1.3vw, 24px); /* 25% of the original clamp(40px, 5.2vw, 96px) */
   line-height: 1;
   height: 1em;
   white-space: nowrap;
