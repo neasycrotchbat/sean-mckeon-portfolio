@@ -47,6 +47,7 @@ def sidebar(active_slug):
         cls = ' class="active"' if p['slug'] == active_slug else ''
         links.append(f'          <a href="/{p["slug"]}/"{cls}>{esc(p["title"])}</a>')
     links = '\n'.join(links)
+    email = CONTENT['moreInfo']['email']
     return f'''    <aside class="sidebar">
       <div class="who">
         <a class="name" href="/">Sean McKeon</a>
@@ -57,7 +58,8 @@ def sidebar(active_slug):
         <div class="nav-projects">
 {links}
         </div>
-        <a class="nav-head nav-contact" href="/contact/">Contact</a>
+        <a class="nav-head nav-more" href="/more-info/">More Info</a>
+        <a class="nav-email" href="mailto:{email}">{email}</a>
       </nav>
       <a class="vimeo-link" href="https://vimeo.com/seanmckeon" target="_blank" rel="noopener">See more work on Vimeo</a>
     </aside>'''
@@ -128,10 +130,8 @@ grid = f'''      <div class="work-grid">
       </div>'''
 write('index.html', shell('Sean McKeon — Multidisciplinary Artist / Motion Designer', None, grid))
 
-# ---- project pages ----
+# ---- project pages (the reel included — it's a normal project now) ----
 for p in PROJECTS:
-    if p['slug'] == 'welcome':
-        continue
     blocks = '\n'.join(render_block(b) for b in p['blocks'])
     article = f'''      <article class="project">
       <h1>{esc(p['title'])}</h1>
@@ -139,45 +139,40 @@ for p in PROJECTS:
       </article>'''
     write(f'{p["slug"]}/index.html', shell(f'{p["title"]} — Sean McKeon', p['slug'], article))
 
-# ---- contact ----
-contact = '''      <div class="contact">
-      <h1>Contact</h1>
-      <form id="contactForm" novalidate>
-        <label>Name *<input required name="name" type="text"></label>
-        <label>Email Address *<input required name="email" type="email"></label>
-        <label>Message *<textarea required name="message" rows="6"></textarea></label>
-        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit">Submit</button>
-        <div class="form-error" hidden>Something went wrong — please try again, or email seanrobertmckeon@gmail.com directly.</div>
-      </form>
-      <div class="form-sent" hidden>Thank you!</div>
-      </div>'''
-write('contact/index.html', shell('Contact — Sean McKeon', 'contact', contact))
+# ---- more info ----
+mi = CONTENT['moreInfo']
+intro = '\n'.join(f'        <p>{esc(t)}</p>' for t in mi['intro'])
+disciplines = '<br>'.join(esc(d) for d in mi['disciplines'])
+toolkit = esc(', '.join(mi['toolkit']))
+clients = esc(', '.join(mi['clients']))
+more = f'''      <article class="more-info">
+      <div class="mi-intro">
+{intro}
+      </div>
+      <div class="mi-facts">
+        <div class="mi-col"><div class="mi-head">Currently</div><div>{esc(mi['currently']['role'])}<br>{esc(mi['currently']['dates'])}</div></div>
+        <div class="mi-col"><div class="mi-head">Disciplines</div><div>{disciplines}</div></div>
+        <div class="mi-col"><div class="mi-head">Toolkit</div><div>{toolkit}</div></div>
+      </div>
+      <div class="mi-clients"><div class="mi-head">Selected Clients</div><div>{clients}</div></div>
+      <div class="mi-contact"><div class="mi-head">Contact</div><a href="mailto:{mi['email']}">{mi['email']}</a></div>
+      </article>'''
+write('more-info/index.html', shell('More Info — Sean McKeon', 'more-info', more))
 
-# ---- welcome ----
-welcome = f'''<!DOCTYPE html>
+# ---- redirect stubs for retired routes ----
+def redirect_stub(target):
+    return f'''<!DOCTYPE html>
 <html lang="en">
-{head('Sean McKeon — Reel 2026')}
-<body>
-{cursor_layers()}
-  <div class="welcome">
-    <div class="welcome-name">
-      <a class="welcome-title" href="/">SEAN MCKEON</a>
-      <div class="welcome-sub">Multidisciplinary Artist / Motion Designer</div>
-    </div>
-    <div class="welcome-reel">
-      <iframe src="https://player.vimeo.com/video/1154777635?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="welcome-links">
-      <a href="https://www.linkedin.com/in/sean-mckeon-77018557/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="http://vimeo.com/seanmckeon" target="_blank" rel="noopener">Vimeo</a>
-      <a href="mailto:seanrobertmckeon@gmail.com">Email</a>
-    </div>
-    <a class="welcome-enter" href="/">Enter site</a>
-  </div>
-</body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url={target}">
+  <link rel="canonical" href="https://seanrobertmckeon.com{target}">
+  <title>Redirecting…</title>
+</head>
+<body><a href="{target}">Moved here</a></body>
 </html>
 '''
-write('welcome/index.html', welcome)
+write('welcome/index.html', redirect_stub('/reel/'))
+write('contact/index.html', redirect_stub('/more-info/'))
 
-print('build complete:', 3 + sum(1 for p in PROJECTS if p['slug'] != 'welcome'), 'pages')
+print('build complete:', 2 + len(PROJECTS), 'pages + 2 redirects')

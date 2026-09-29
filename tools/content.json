@@ -1,12 +1,20 @@
 {
   "projects": [
     {
-      "slug": "welcome",
+      "slug": "reel",
       "title": "Sean McKeon Reel 2026",
       "year": "2026",
-      "cover": "/media/covers/welcome.webp",
+      "cover": "/media/covers/reel.webp",
       "coverType": "image",
-      "blocks": []
+      "blocks": [
+        {
+          "type": "embed",
+          "provider": "vimeo",
+          "id": "1154777635",
+          "hash": null,
+          "src": "https://player.vimeo.com/video/1154777635?badge=0&autopause=0&dnt=1"
+        }
+      ]
     },
     {
       "slug": "copa-mundial-de-la-fifa-2026",
@@ -432,5 +440,50 @@
         }
       ]
     }
-  ]
+  ],
+  "moreInfo": {
+    "intro": [
+      "I'm a multidisciplinary artist and motion designer based in Richardson, Texas, with 15+ years designing and animating for broadcast, brands, sports and live experiences — currently Senior Designer at NBCUniversal.",
+      "From 2D storytelling to full 3D generalist pipelines, I build work that reads instantly and holds up on the big screen. I'm now pushing deeper into real-time graphics, Unreal Engine and Houdini — bringing procedural and interactive tools into commercial motion design."
+    ],
+    "currently": {
+      "role": "Senior Designer, NBCUniversal",
+      "dates": "2025 — Present"
+    },
+    "disciplines": [
+      "3D Generalist",
+      "2D / 3D Animation",
+      "Motion Design & Direction",
+      "Programmatic Graphics",
+      "Sports & Arena Graphics"
+    ],
+    "toolkit": [
+      "Cinema 4D",
+      "After Effects",
+      "Photoshop",
+      "Illustrator",
+      "Premiere Pro",
+      "Cavalry",
+      "Figma",
+      "Redshift / Octane",
+      "Character Creator 4",
+      "iClone 8",
+      "Processing"
+    ],
+    "clients": [
+      "AMC Theatres",
+      "Garmin",
+      "NBC / Telemundo",
+      "GameStop",
+      "PUMA",
+      "National Geographic",
+      "LinkedIn",
+      "Sprint",
+      "Kansas City Royals",
+      "Dallas Cowboys",
+      "Seattle Mariners",
+      "Calgary Flames"
+    ],
+    "email": "seanrobertmckeon@gmail.com"
+  }
 }

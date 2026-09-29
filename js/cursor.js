@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var BLOB_SIZE = 120, GRID_SIZE = 26, PIXEL_GRID = true;
+  var BLOB_SIZE = 140, GRID_SIZE = 12, PIXEL_GRID = true;
 
   if (window.matchMedia('(hover: none)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
