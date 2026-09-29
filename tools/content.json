@@ -1,0 +1,436 @@
+{
+  "projects": [
+    {
+      "slug": "welcome",
+      "title": "Sean McKeon Reel 2026",
+      "year": "2026",
+      "cover": "/media/covers/welcome.webp",
+      "coverType": "image",
+      "blocks": []
+    },
+    {
+      "slug": "copa-mundial-de-la-fifa-2026",
+      "title": "Copa Mundial de la Fifa 2026",
+      "year": "2026",
+      "cover": "/media/covers/copa-mundial-de-la-fifa-2026.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Here is an open I created for Telemundo's Copa Mundial de la Fifa 2026 otherwise known as The World Cup."
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/copa-mundial-de-la-fifa-2026--01.mp4",
+          "poster": "/media/videos/copa-mundial-de-la-fifa-2026--01.jpg",
+          "ccvId": "CwqMUy9vGDT"
+        }
+      ]
+    },
+    {
+      "slug": "gamestop-x-psa-powerpacks",
+      "title": "Gamestop x PSA Powerpacks",
+      "year": "2025",
+      "cover": "/media/covers/gamestop-x-psa-powerpacks.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Video demo or POC for Gamestop and PSA's joint venture ",
+          "link": {
+            "label": "PowerPacks",
+            "href": "https://powerpacks.gamestop.com"
+          },
+          "textAfter": ". This project was a collaboration with the talented Vince Ream. Vince was responsible for the design and animation of the arcade room while I handled the vault portion."
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/gamestop-x-psa-powerpacks--01.mp4",
+          "poster": "/media/videos/gamestop-x-psa-powerpacks--01.jpg",
+          "ccvId": "P-23wEEDY_7"
+        }
+      ]
+    },
+    {
+      "slug": "gamestop-buck-refresh",
+      "title": "Gamestop Buck Refresh",
+      "year": "2025",
+      "cover": "/media/covers/gamestop-buck-refresh.webp",
+      "coverType": "image",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Gamestop tasked me with a refresh of their beloved mascot Buck the Bunny. Below you will find images of Buck in scenarios for use in various web page empty states."
+        },
+        {
+          "type": "imageGrid",
+          "images": [
+            "/media/buck/404.webp",
+            "/media/buck/approves.webp",
+            "/media/buck/contact-support.webp",
+            "/media/buck/empty-cart.webp",
+            "/media/buck/store-locator.webp",
+            "/media/buck/no-results.webp",
+            "/media/buck/no-results-b.webp",
+            "/media/buck/order-confirmation.webp",
+            "/media/buck/thumbs-up.webp"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Below here are some animation and style experiments."
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/gamestop-buck-refresh--01.mp4",
+          "poster": "/media/videos/gamestop-buck-refresh--01.jpg",
+          "ccvId": "DIT6zVweNBg"
+        },
+        {
+          "type": "image",
+          "src": "/media/buck/404-poster.webp"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/gamestop-buck-refresh--02.mp4",
+          "poster": "/media/videos/gamestop-buck-refresh--02.jpg",
+          "ccvId": "QUTNPW5t23t"
+        }
+      ]
+    },
+    {
+      "slug": "laser-at-amc-2024-preshow",
+      "title": "AMC 2024 Preshow",
+      "year": "2024",
+      "cover": "/media/covers/laser-at-amc-2024-preshow.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Below are rough edits of my contributions to the 2024 AMC Preshows. I handled all 3D aspects in these pieces with creative direction and compositing by Intake Studio's Brian Simpson"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/laser-at-amc-2024-preshow--01.mp4",
+          "poster": "/media/videos/laser-at-amc-2024-preshow--01.jpg",
+          "ccvId": "F3qKzPHFRcL"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/laser-at-amc-2024-preshow--02.mp4",
+          "poster": "/media/videos/laser-at-amc-2024-preshow--02.jpg",
+          "ccvId": "7v5fjjFFch_"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/laser-at-amc-2024-preshow--03.mp4",
+          "poster": "/media/videos/laser-at-amc-2024-preshow--03.jpg",
+          "ccvId": "JNB3VUNcQ3Y"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/laser-at-amc-2024-preshow--04.mp4",
+          "poster": "/media/videos/laser-at-amc-2024-preshow--04.jpg",
+          "ccvId": "I4HA6LdQZCJ"
+        }
+      ]
+    },
+    {
+      "slug": "garmin",
+      "title": "Garmin",
+      "year": "2021",
+      "cover": "/media/covers/garmin.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "video",
+          "src": "/media/videos/garmin--01.mp4",
+          "poster": "/media/videos/garmin--01.jpg",
+          "ccvId": "5m_aoUDESgy"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/garmin--02.mp4",
+          "poster": "/media/videos/garmin--02.jpg",
+          "ccvId": "4ec7cLE3yoS"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/garmin--03.mp4",
+          "poster": "/media/videos/garmin--03.jpg",
+          "ccvId": "Imk4dBz9TqB"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/garmin--04.mp4",
+          "poster": "/media/videos/garmin--04.jpg",
+          "ccvId": "Kkd3_LqpsDm"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/garmin--05.mp4",
+          "poster": "/media/videos/garmin--05.jpg",
+          "ccvId": "-DGRMBaA_Jj"
+        }
+      ]
+    },
+    {
+      "slug": "amc-2020-preshow",
+      "title": "AMC 2020 Preshow",
+      "year": "2020",
+      "cover": "/media/covers/amc-2020-preshow.webp",
+      "coverType": "image",
+      "blocks": [
+        {
+          "type": "video",
+          "src": "/media/videos/amc-2020-preshow--01.mp4",
+          "poster": "/media/videos/amc-2020-preshow--01.jpg",
+          "ccvId": "KnpaBLtikH9"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-2020-preshow--02.mp4",
+          "poster": "/media/videos/amc-2020-preshow--02.jpg",
+          "ccvId": "Nb3ZAZ9oQQo"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-2020-preshow--03.mp4",
+          "poster": "/media/videos/amc-2020-preshow--03.jpg",
+          "ccvId": "DGz52QNKSKY"
+        }
+      ]
+    },
+    {
+      "slug": "amc-2016-preshow",
+      "title": "AMC 2016 Preshow",
+      "year": "2016",
+      "cover": "/media/covers/amc-2016-preshow.webp",
+      "coverType": "image",
+      "blocks": [
+        {
+          "type": "video",
+          "src": "/media/videos/amc-2016-preshow--01.mp4",
+          "poster": "/media/videos/amc-2016-preshow--01.jpg",
+          "ccvId": "EDwkLBcUKIa"
+        }
+      ]
+    },
+    {
+      "slug": "amc-miscellaneous-projects",
+      "title": "AMC Miscellaneous Projects",
+      "year": "2023",
+      "cover": "/media/covers/amc-miscellaneous-projects.webp",
+      "coverType": "image",
+      "blocks": [
+        {
+          "type": "video",
+          "src": "/media/videos/amc-miscellaneous-projects--01.mp4",
+          "poster": "/media/videos/amc-miscellaneous-projects--01.jpg",
+          "ccvId": "2IzeDwT6BNW"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-miscellaneous-projects--02.mp4",
+          "poster": "/media/videos/amc-miscellaneous-projects--02.jpg",
+          "ccvId": "CKj_XdaDDBA"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-miscellaneous-projects--03.mp4",
+          "poster": "/media/videos/amc-miscellaneous-projects--03.jpg",
+          "ccvId": "L_azim2wTD8"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-miscellaneous-projects--04.mp4",
+          "poster": "/media/videos/amc-miscellaneous-projects--04.jpg",
+          "ccvId": "8DTLoSeXRS4"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-miscellaneous-projects--05.mp4",
+          "poster": "/media/videos/amc-miscellaneous-projects--05.jpg",
+          "ccvId": "TNaaT9K9xmD"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-miscellaneous-projects--06.mp4",
+          "poster": "/media/videos/amc-miscellaneous-projects--06.jpg",
+          "ccvId": "LdW-9KqmuSo"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/amc-miscellaneous-projects--07.mp4",
+          "poster": "/media/videos/amc-miscellaneous-projects--07.jpg",
+          "ccvId": "65suU7QL85U"
+        }
+      ]
+    },
+    {
+      "slug": "sports",
+      "title": "Sports!",
+      "year": "2016",
+      "cover": "/media/covers/sports.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "video",
+          "src": "/media/videos/sports--01.mp4",
+          "poster": "/media/videos/sports--01.jpg",
+          "ccvId": "FRqjE6TVIc5"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/sports--02.mp4",
+          "poster": "/media/videos/sports--02.jpg",
+          "ccvId": "CbIQbcL4HRT"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/sports--03.mp4",
+          "poster": "/media/videos/sports--03.jpg",
+          "ccvId": "Ji99cVEkpny"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/sports--04.mp4",
+          "poster": "/media/videos/sports--04.jpg",
+          "ccvId": "VFfn7vAc8zD"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/sports--05.mp4",
+          "poster": "/media/videos/sports--05.jpg",
+          "ccvId": "N2DU6nhqnvJ"
+        }
+      ]
+    },
+    {
+      "slug": "deg-party-wall",
+      "title": "DEG Party Wall",
+      "year": "2020",
+      "cover": "/media/covers/deg-party-wall.webp",
+      "coverType": "image",
+      "blocks": [
+        {
+          "type": "video",
+          "src": "/media/videos/deg-party-wall--01.mp4",
+          "poster": "/media/videos/deg-party-wall--01.jpg",
+          "ccvId": "Dnwjc3djVSG"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/deg-party-wall--02.mp4",
+          "poster": "/media/videos/deg-party-wall--02.jpg",
+          "ccvId": "B8T-xATd64t"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/deg-party-wall--03.mp4",
+          "poster": "/media/videos/deg-party-wall--03.jpg",
+          "ccvId": "9BHh8KKKWHI"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/deg-party-wall--04.mp4",
+          "poster": "/media/videos/deg-party-wall--04.jpg",
+          "ccvId": "JyTILpV7q38"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/deg-party-wall--05.mp4",
+          "poster": "/media/videos/deg-party-wall--05.jpg",
+          "ccvId": "KvIQR9Vk_y-"
+        }
+      ]
+    },
+    {
+      "slug": "missouri-lottery",
+      "title": "Missouri Lottery",
+      "year": "2014",
+      "cover": "/media/covers/missouri-lottery.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "video",
+          "src": "/media/videos/missouri-lottery--01.mp4",
+          "poster": "/media/videos/missouri-lottery--01.jpg",
+          "ccvId": "5Kr5MAxIAws"
+        },
+        {
+          "type": "video",
+          "src": "/media/videos/missouri-lottery--02.mp4",
+          "poster": "/media/videos/missouri-lottery--02.jpg",
+          "ccvId": "MN9NcKYGbRY"
+        }
+      ]
+    },
+    {
+      "slug": "fashion-for-a-cause",
+      "title": "Fashion For A Cause",
+      "year": "2013",
+      "cover": "/media/covers/fashion-for-a-cause.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "embed",
+          "provider": "vimeo",
+          "id": "1231329014",
+          "hash": "8623a6c55f",
+          "src": "https://player.vimeo.com/video/1231329014?h=8623a6c55f&badge=0&autopause=0&dnt=1"
+        },
+        {
+          "type": "embed",
+          "provider": "vimeo",
+          "id": "73189758",
+          "hash": null,
+          "src": "https://player.vimeo.com/video/73189758?badge=0&autopause=0&dnt=1"
+        }
+      ]
+    },
+    {
+      "slug": "kauffman-center-opening-gala",
+      "title": "Kauffman Center Opening Gala",
+      "year": "2012",
+      "cover": "/media/covers/kauffman-center-opening-gala.mp4",
+      "coverType": "video",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Architectural projection for the opening gala of the Kauffman Center for the Performing Arts, Kansas City."
+        },
+        {
+          "type": "embed",
+          "provider": "vimeo",
+          "id": "1231329644",
+          "hash": "223bf15d2d",
+          "src": "https://player.vimeo.com/video/1231329644?h=223bf15d2d&badge=0&autopause=0&dnt=1"
+        },
+        {
+          "type": "embed",
+          "provider": "vimeo",
+          "id": "1231329643",
+          "hash": "464603174b",
+          "src": "https://player.vimeo.com/video/1231329643?h=464603174b&badge=0&autopause=0&dnt=1"
+        }
+      ]
+    },
+    {
+      "slug": "art-of-the-heart",
+      "title": "Art of the Heart",
+      "year": "2012",
+      "cover": "/media/covers/art-of-the-heart.webp",
+      "coverType": "image",
+      "blocks": [
+        {
+          "type": "embed",
+          "provider": "vimeo",
+          "id": "1231330092",
+          "hash": "912aa38dcc",
+          "src": "https://player.vimeo.com/video/1231330092?h=912aa38dcc&badge=0&autopause=0&dnt=1"
+        }
+      ]
+    }
+  ]
+}

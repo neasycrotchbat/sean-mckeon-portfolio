@@ -3,151 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sean McKeon — Motion Designer &amp; 3D Generalist</title>
+  <title>Sean McKeon — Multidisciplinary Artist / Motion Designer</title>
   <meta name="description" content="Sean McKeon is a multidisciplinary artist and motion designer in Richardson, TX — broadcast, brand film, experiential, and real-time work.">
-  <meta property="og:title" content="Sean McKeon — Motion Designer &amp; 3D Generalist">
-  <meta property="og:description" content="Broadcast, brand film, experiential, and real-time motion design.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23111111'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23ffffff'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500&display=swap">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/cursor.js" defer></script>
+  <script src="/js/site.js" defer></script>
+  <script src="/js/visits.js" defer></script>
 </head>
 <body>
-
-  <div id="app" class="shell">
-    <header class="hdr">
-      <div class="hdr-left">
-        <a href="#" data-nav="home">Sean McKeon</a>
-        <a href="#" data-nav="home" class="hdr-index" id="hdrIndex" hidden><span>←</span>Index</a>
+  <canvas id="gridCanvas" class="grid-canvas" aria-hidden="true"></canvas>
+  <div id="blobLayer" class="blob-layer" aria-hidden="true"></div>
+  <div class="frame">
+    <aside class="sidebar">
+      <div class="who">
+        <a class="name" href="/">Sean McKeon</a>
+        <div class="tagline">Multidisciplinary Artist/Motion Designer</div>
       </div>
-      <div class="hdr-right">
-        <a href="#" data-nav="info" id="hdrInfo">Info</a>
-        <a href="mailto:seanrobertmckeon@gmail.com" class="hdr-contact" id="hdrContact" hidden>Contact</a>
-        <a href="#" class="invert-dot" id="invertDot" aria-label="Invert" title="Invert"></a>
-      </div>
-    </header>
-
-    <main id="viewRoot"></main>
-
-    <div id="invertLayer" class="invert-layer"></div>
-    <canvas id="gridCanvas" class="grid-canvas"></canvas>
-    <div id="blobLayer" class="blob-layer"></div>
-
-    <div id="transition" class="transition" hidden>
-      <div class="transition-dim"></div>
-      <div class="transition-wipe"></div>
-    </div>
-  </div>
-
-  <!-- ============ Home ============ -->
-  <template id="tpl-home">
-    <section class="view view-home" data-view="home">
-      <div class="home-col1">
-        <h1 class="display-1">Motion<br>Designer</h1>
-        <p class="home-bio">Cinematic animation, real‑time installations, and brand campaigns.</p>
-      </div>
-
-      <div class="stack-outer" data-stack-outer>
-        <div class="stack-inner" data-stack-inner></div>
-      </div>
-
-      <svg class="tile-filters" aria-hidden="true"><defs data-filter-defs></defs></svg>
-
-      <div class="home-col3">
-        <a href="#" class="home-reel" data-reel>Reel 2026</a>
-        <div class="home-label">Selected Work</div>
-        <div class="home-titles" data-titles></div>
-      </div>
-
-      <div class="home-footer" data-footer>
-        <div class="footer-blocks">
-          <div class="footer-contact"><div class="lbl">Contact</div><a href="mailto:seanrobertmckeon@gmail.com" class="fw">seanrobertmckeon@gmail.com</a></div>
-          <div><div class="lbl">Location</div><div class="fw">Richardson, TX</div></div>
+      <nav class="nav">
+        <a class="nav-head" href="/">Work</a>
+        <div class="nav-projects">
+          <a href="/welcome/">Sean McKeon Reel 2026</a>
+          <a href="/copa-mundial-de-la-fifa-2026/">Copa Mundial de la Fifa 2026</a>
+          <a href="/gamestop-x-psa-powerpacks/">Gamestop x PSA Powerpacks</a>
+          <a href="/gamestop-buck-refresh/">Gamestop Buck Refresh</a>
+          <a href="/laser-at-amc-2024-preshow/">AMC 2024 Preshow</a>
+          <a href="/garmin/">Garmin</a>
+          <a href="/amc-2020-preshow/">AMC 2020 Preshow</a>
+          <a href="/amc-2016-preshow/">AMC 2016 Preshow</a>
+          <a href="/amc-miscellaneous-projects/">AMC Miscellaneous Projects</a>
+          <a href="/sports/">Sports!</a>
+          <a href="/deg-party-wall/">DEG Party Wall</a>
+          <a href="/missouri-lottery/">Missouri Lottery</a>
+          <a href="/fashion-for-a-cause/">Fashion For A Cause</a>
+          <a href="/kauffman-center-opening-gala/">Kauffman Center Opening Gala</a>
+          <a href="/art-of-the-heart/">Art of the Heart</a>
         </div>
-        <div></div>
-        <div class="footer-right">© 2026</div>
-      </div>
-    </section>
-  </template>
-
-  <!-- ============ Project row ============ -->
-  <template id="tpl-project">
-    <section class="view view-project" data-view="project">
-      <div class="spacer64"></div>
-      <div class="proj-center">
-        <h1 class="proj-title" data-title></h1>
-        <div class="strip-wrap">
-          <div>
-            <div class="strip-track" data-track></div>
-          </div>
-        </div>
-      </div>
-      <div class="proj-info" data-info>
-        <p class="proj-desc" data-desc></p>
-        <div><div class="lbl">Year</div><div class="fw" data-year></div></div>
-        <div><div class="lbl">Role</div><div class="fw" data-role></div></div>
-        <div><div class="lbl">Visit</div><a class="fw" data-url target="_blank" rel="noreferrer">Watch on Vimeo ↗</a></div>
-        <a href="#" class="proj-next" data-next>
-          <div class="proj-next-text"><div class="lbl">Next project</div><div class="fw" data-next-title></div></div>
-          <div class="proj-next-thumb"><img data-next-poster alt=""></div>
+        <a class="nav-head nav-contact" href="/contact/">Contact</a>
+      </nav>
+      <a class="vimeo-link" href="https://vimeo.com/seanmckeon" target="_blank" rel="noopener">See more work on Vimeo</a>
+    </aside>
+    <main class="main">
+      <div class="work-grid">
+        <a class="tile" href="/welcome/" aria-label="Sean McKeon Reel 2026">
+          <div class="tile-media"><img src="/media/covers/welcome.webp" alt="Sean McKeon Reel 2026" loading="lazy"></div>
+        </a>
+        <a class="tile" href="/copa-mundial-de-la-fifa-2026/" aria-label="Copa Mundial de la Fifa 2026">
+          <div class="tile-media"><video src="/media/covers/copa-mundial-de-la-fifa-2026.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="Copa Mundial de la Fifa 2026"></video></div>
+        </a>
+        <a class="tile" href="/gamestop-x-psa-powerpacks/" aria-label="Gamestop x PSA Powerpacks">
+          <div class="tile-media"><video src="/media/covers/gamestop-x-psa-powerpacks.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="Gamestop x PSA Powerpacks"></video></div>
+        </a>
+        <a class="tile" href="/gamestop-buck-refresh/" aria-label="Gamestop Buck Refresh">
+          <div class="tile-media"><img src="/media/covers/gamestop-buck-refresh.webp" alt="Gamestop Buck Refresh" loading="lazy"></div>
+        </a>
+        <a class="tile" href="/laser-at-amc-2024-preshow/" aria-label="AMC 2024 Preshow">
+          <div class="tile-media"><video src="/media/covers/laser-at-amc-2024-preshow.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="AMC 2024 Preshow"></video></div>
+        </a>
+        <a class="tile" href="/garmin/" aria-label="Garmin">
+          <div class="tile-media"><video src="/media/covers/garmin.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="Garmin"></video></div>
+        </a>
+        <a class="tile" href="/amc-2020-preshow/" aria-label="AMC 2020 Preshow">
+          <div class="tile-media"><img src="/media/covers/amc-2020-preshow.webp" alt="AMC 2020 Preshow" loading="lazy"></div>
+        </a>
+        <a class="tile" href="/amc-2016-preshow/" aria-label="AMC 2016 Preshow">
+          <div class="tile-media"><img src="/media/covers/amc-2016-preshow.webp" alt="AMC 2016 Preshow" loading="lazy"></div>
+        </a>
+        <a class="tile" href="/amc-miscellaneous-projects/" aria-label="AMC Miscellaneous Projects">
+          <div class="tile-media"><img src="/media/covers/amc-miscellaneous-projects.webp" alt="AMC Miscellaneous Projects" loading="lazy"></div>
+        </a>
+        <a class="tile" href="/sports/" aria-label="Sports!">
+          <div class="tile-media"><video src="/media/covers/sports.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="Sports!"></video></div>
+        </a>
+        <a class="tile" href="/deg-party-wall/" aria-label="DEG Party Wall">
+          <div class="tile-media"><img src="/media/covers/deg-party-wall.webp" alt="DEG Party Wall" loading="lazy"></div>
+        </a>
+        <a class="tile" href="/missouri-lottery/" aria-label="Missouri Lottery">
+          <div class="tile-media"><video src="/media/covers/missouri-lottery.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="Missouri Lottery"></video></div>
+        </a>
+        <a class="tile" href="/fashion-for-a-cause/" aria-label="Fashion For A Cause">
+          <div class="tile-media"><video src="/media/covers/fashion-for-a-cause.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="Fashion For A Cause"></video></div>
+        </a>
+        <a class="tile" href="/kauffman-center-opening-gala/" aria-label="Kauffman Center Opening Gala">
+          <div class="tile-media"><video src="/media/covers/kauffman-center-opening-gala.mp4" autoplay muted loop playsinline disablepictureinpicture aria-label="Kauffman Center Opening Gala"></video></div>
+        </a>
+        <a class="tile" href="/art-of-the-heart/" aria-label="Art of the Heart">
+          <div class="tile-media"><img src="/media/covers/art-of-the-heart.webp" alt="Art of the Heart" loading="lazy"></div>
         </a>
       </div>
-    </section>
-  </template>
-
-  <!-- ============ Archive ============ -->
-  <template id="tpl-mosaic">
-    <section class="view view-mosaic" data-view="mosaic">
-      <div class="spacer64"></div>
-      <div class="mosaic-center">
-        <h1 class="mosaic-title">Archive</h1>
-        <div class="mosaic-grid" data-grid></div>
-      </div>
-      <div class="mosaic-bar">
-        <p class="mosaic-copy">Everything else — reels, cinema spots, bumpers, headshots and projection work, 2012 – 2024.</p>
-        <a href="#" class="mosaic-link" data-nav="info">Info &amp; contact <span>→</span></a>
-      </div>
-    </section>
-  </template>
-
-  <!-- ============ Info ============ -->
-  <template id="tpl-info">
-    <section class="view view-info" data-view="info">
-      <div class="info-col1">
-        <h1 class="display-1">Info</h1>
-        <p class="info-bio">Richardson, TX–based Senior Motion Designer and 3D artist. Currently at NBCUniversal — The Arthouse; previously Intake Studios, Garmin and S Group.</p>
-        <div class="info-block info-tools"><div class="lbl">Tools</div><p class="fw">Cinema 4D, Redshift, Octane, Unreal Engine, After Effects, Premiere Pro, Cavalry, Figma, ComfyUI, Claude.</p></div>
-        <div class="info-block info-edu"><div class="lbl">Education</div><p class="fw">University of Missouri — BS, Information Technology</p></div>
-      </div>
-      <div class="info-col2">
-        <div>
-          <div class="lbl xp-label">Experience</div>
-          <div class="xp-list">
-            <div class="xp-row"><span class="fw">NBCUniversal — The Arthouse <span class="xp-role">Senior Designer</span></span><span class="xp-years">2025 —</span></div>
-            <div class="xp-row"><span class="fw">INTER NYC / GameStop <span class="xp-role">Freelance</span></span><span class="xp-years">2024 — 25</span></div>
-            <div class="xp-row"><span class="fw">Intake Studios <span class="xp-role">Senior Motion Designer</span></span><span class="xp-years">2016 — 24</span></div>
-            <div class="xp-row"><span class="fw">Garmin <span class="xp-role">Senior Motion Designer</span></span><span class="xp-years">2021 — 22</span></div>
-            <div class="xp-row"><span class="fw">S Group Creations <span class="xp-role">Senior Motion Designer</span></span><span class="xp-years">2014 — 16</span></div>
-            <div class="xp-row"><span class="fw">T2 / Hint <span class="xp-role">Motion Designer &amp; Programmer</span></span><span class="xp-years">2011 — 14</span></div>
-            <div class="xp-row"><span class="fw">JW Broadcasting <span class="xp-role">Producer</span></span><span class="xp-years">2008 — 10</span></div>
-          </div>
-        </div>
-        <div>
-          <div class="lbl clients-label">Clients</div>
-          <p class="clients fw">NBCUniversal, Peacock, Telemundo, AMC Theatres, Garmin, GameStop, PUMA, National Geographic, Wendy's, Sprint, LinkedIn, Kansas City Royals, Seattle Mariners, Dallas Cowboys, Calgary Flames, Missouri Lottery.</p>
-        </div>
-      </div>
-      <div class="info-footer">
-        <div class="footer-blocks">
-          <div><div class="lbl">Contact</div><a href="mailto:seanrobertmckeon@gmail.com" class="fw">seanrobertmckeon@gmail.com</a></div>
-          <div><div class="lbl">Elsewhere</div><div class="info-links fw"><a href="https://vimeo.com/seanmckeon" target="_blank" rel="noreferrer">Vimeo</a><a href="https://www.linkedin.com/in/sean-mckeon-77018557" target="_blank" rel="noreferrer">LinkedIn</a><a href="resume/" target="_blank" rel="noreferrer">Resume</a></div></div>
-        </div>
-        <div class="fw">© 2026</div>
-      </div>
-    </section>
-  </template>
-
+      <footer class="foot"><a href="#" id="toTop">↑ Back to Top</a></footer>
+    </main>
+  </div>
 </body>
 </html>
