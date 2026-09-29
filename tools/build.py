@@ -30,7 +30,7 @@ def head(title, extra_js=''):
   <link rel="icon" href="{FAVICON}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/cursor.js" defer></script>
   <script src="/js/site.js" defer></script>
@@ -50,7 +50,7 @@ def sidebar(active_slug):
     email = CONTENT['moreInfo']['email']
     return f'''    <aside class="sidebar">
       <div class="who">
-        <a class="name" href="/">Sean McKeon</a>
+        <a class="name" href="/">Sean<br>McKeon</a>
         <div class="tagline">Multidisciplinary Artist/Motion Designer</div>
       </div>
       <nav class="nav">
