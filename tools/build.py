@@ -69,6 +69,7 @@ def shell(title, active_slug, main_html, extra_js=''):
 <html lang="en">
 {head(title, extra_js)}
 <body>
+  <div class="page">
 {cursor_layers()}
   <div class="frame">
 {sidebar(active_slug)}
@@ -76,6 +77,7 @@ def shell(title, active_slug, main_html, extra_js=''):
 {main_html}
       <footer class="foot"><a href="#" id="toTop">↑ Back to Top</a></footer>
     </main>
+  </div>
   </div>
 </body>
 </html>

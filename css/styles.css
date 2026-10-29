@@ -36,8 +36,17 @@ body {
   color: #111;
   font-family: 'Druk Text', Oswald, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* The page div paints the white that blended text samples. Relying on the
+   body/root background instead lets Chromium fold that white into the root
+   scroller layer — outside the blend group — so difference-blended text can
+   intermittently sample a transparent backdrop and flicker. The reference
+   prototype wraps everything in exactly this kind of element. */
+.page {
   position: relative;
   min-height: 100vh;
+  background: #fff;
 }
 
 a { color: #111; text-decoration: none; }
@@ -103,7 +112,7 @@ a:hover { color: #777; }
   color: #fff;
 }
 
-.tagline { font-size: 14px; line-height: 1.4; color: #aaa; }
+.tagline { font-size: 14px; line-height: 1.4; color: #aaa; white-space: nowrap; }
 
 .nav { display: flex; flex-direction: column; gap: 9px; font-size: 14px; line-height: 1.3; }
 
