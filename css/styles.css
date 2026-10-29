@@ -47,6 +47,21 @@ body {
   position: relative;
   min-height: 100vh;
   background: #fff;
+  isolation: isolate; /* one stable render surface for the blend group */
+}
+
+/* Pin every difference-blended element onto its own composited layer.
+   Without this, Chromium re-rasterizes the blended text in main-thread
+   tiles as the blob layer sweeps underneath; partially updated tiles
+   show as hard rectangular colour cuts across the large display type
+   (reproduced in Chrome on Windows; the GPU-composited path blends
+   per pixel, per frame). */
+.sidebar,
+.project h1,
+.copy,
+.foot,
+.more-info {
+  will-change: transform;
 }
 
 a { color: #111; text-decoration: none; }
