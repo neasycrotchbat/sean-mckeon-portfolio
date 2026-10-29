@@ -64,8 +64,11 @@ body {
   will-change: transform;
 }
 
+/* No global a:hover: in the reference every colour is an inline style, so
+   its a:hover{color:#777} can never fire — here it would leak onto the
+   class-styled blended links (greying the name on hover). Hover colours are
+   set per element (.nav-projects a, .nav-email, .vimeo-link) instead. */
 a { color: #111; text-decoration: none; }
-a:hover { color: #777; }
 
 @keyframes hueLoop { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
 
