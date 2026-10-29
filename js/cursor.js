@@ -86,6 +86,16 @@
       canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
     }
     var cs = GRID_SIZE, life = 2200;
+    // displayed alpha: min(attack envelope, quadratic decay). The decay curve
+    // (1 - age/life)^2 is the designed fade and is unchanged; the attack
+    // envelope removes the hard flashes that flickered text blended above the
+    // trail — a re-lit cell used to snap from its faded alpha straight to 1,
+    // and hovered cells sawtoothed ~5% at the 60ms re-stamp cadence.
+    var alphaOf = function (c) {
+      var decay = 1 - (now - c.t) / life;
+      if (decay < 0) decay = 0;
+      return Math.min(c.a, decay * decay);
+    };
     balls.forEach(function (b) {
       var rr = b.r * .95; if (rr < 4) return;
       for (var j = Math.floor((b.y - rr) / cs); j <= Math.floor((b.y + rr) / cs); j++)
@@ -93,15 +103,25 @@
           var cx = (i + .5) * cs, cy = (j + .5) * cs;
           if ((cx - b.x) * (cx - b.x) + (cy - b.y) * (cy - b.y) > rr * rr) continue;
           var k = i + ',' + j, prev = cells.get(k);
-          if (!prev || now - prev.t > 60) cells.set(k, { i: i, j: j, t: now, col: blobColor(cx, cy, now) });
+          if (!prev) {
+            cells.set(k, { i: i, j: j, t: now, col: blobColor(cx, cy, now), colT: now, a: 0 });
+          } else {
+            // re-covered after a gap: restart the attack from the alpha the
+            // cell is currently showing, so it brightens instead of flashing
+            if (now - prev.t > 90) prev.a = alphaOf(prev);
+            prev.t = now; // pinned every covered frame — no re-stamp sawtooth
+            if (now - prev.colT > 60) { prev.col = blobColor(cx, cy, now); prev.colT = now; }
+          }
         }
     });
     var ctx = canvas.getContext('2d');
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
     cells.forEach(function (v, k) {
-      var a = 1 - (now - v.t) / life;
-      if (a <= 0) { cells.delete(k); return; }
-      ctx.fillStyle = 'hsla(' + v.col[0].toFixed(0) + ',' + v.col[1].toFixed(0) + '%,' + v.col[2].toFixed(0) + '%,' + (a * a).toFixed(3) + ')';
+      if (now - v.t < 90) v.a += (1 - v.a) * .28; // covered: ease toward full over ~130ms
+      var decay = 1 - (now - v.t) / life;
+      if (decay <= 0) { cells.delete(k); return; }
+      var a = Math.min(v.a, decay * decay);
+      ctx.fillStyle = 'hsla(' + v.col[0].toFixed(0) + ',' + v.col[1].toFixed(0) + '%,' + v.col[2].toFixed(0) + '%,' + a.toFixed(3) + ')';
       ctx.fillRect(v.i * cs, v.j * cs, cs, cs);
     });
   }
